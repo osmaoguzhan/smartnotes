@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="my-5">Notes</h1>
+    <div class="row row-cols3 g-2">
+        {% if notes.count == 0 %}
+            <p>You don't have any notes.</p>
+            <a href="{% url "notes.create" %}" class="btn btn-primary">Create one</a>
+        {% endif %}
+        {% for note in notes %}
+            <div class="col">
+                <a href="{% url "notes.detail" pk=note.id %}">
+                    <div class="p-3 border rounded">
+                        <h4>{{ note.title }}</h4>
+                        <p>{{ note.text }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

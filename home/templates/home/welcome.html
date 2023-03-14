@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to SmartNotes!</h1>
+    <p>SmartNotes is a simple note taking application that allows you to create, edit, and delete notes.</p>
+    <a href="{% url 'notes.list' %}" class="btn btn-primary">Create a Note</a>
+{% endblock %}
